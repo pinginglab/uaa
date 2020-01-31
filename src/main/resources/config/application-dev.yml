@@ -68,8 +68,8 @@ spring:
       hibernate.cache.hazelcast.instance_name: uaa
       hibernate.cache.use_minimal_puts: true
       hibernate.cache.hazelcast.use_lite_member: true
-    hibernate:
-      ddl-auto: update
+#    hibernate:
+#      ddl-auto: update
 
 #  liquibase:
 #    # Remove 'faker' if you do not want the sample data to be loaded automatically
@@ -144,8 +144,8 @@ uaa:
     password: 123456
     alias: tomcat
   web-client-configuration:
-    # Access Token is valid for 5 mins
-    access-token-validity-in-seconds: 300
+    # Access Token is valid for 7 days
+    access-token-validity-in-seconds: 604800
     # Refresh Token is valid for 7 days
     refresh-token-validity-in-seconds-for-remember-me: 604800
     client-id: web_app
