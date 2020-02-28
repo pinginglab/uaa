@@ -1,7 +1,5 @@
 #!/bin/bash
-docker pull openjdk:8-jre-alpine
-./gradlew clean
-./gradlew bootWar -Pprod buildDocker
-#docker build . -t uaa:latest
-#docker tag uaa:latest :5000/sg/uaa:latest
-#docker push :5000/sg/uaa:latest
+./gradlew bootJar -Pprod jibDockerBuild
+#docker tag uaa:latest registry.cn-hangzhou.aliyuncs.com/pingsec/compose/uaa:latest
+docker tag uaa:latest ccr.ccs.tencentyun.com/pingsec/compose/uaa:1.0
+docker push ccr.ccs.tencentyun.com/pingsec/compose/uaa:1.0
